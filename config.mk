@@ -13,3 +13,7 @@
 # limitations under the License.
 
 LOCAL_PATH := vendor/weebui
+
+# Inherit vendor submodules
+$(call inherit-product, vendor/weebui/audio/audio.mk)
+
