@@ -12,10 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := vendor/weebui
-
-# Inherit vendor submodules
-$(call inherit-product, vendor/weebui/audio/audio.mk)
-$(call inherit-product, vendor/weebui/bootanimation/bootanimation.mk)
-
-
+PRODUCT_COPY_FILES += \
+   vendor/weebui/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
