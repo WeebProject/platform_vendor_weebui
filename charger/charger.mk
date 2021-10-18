@@ -12,11 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := vendor/weebui
-
-# Inherit vendor submodules
-$(call inherit-product, vendor/weebui/audio/audio.mk)
-$(call inherit-product, vendor/weebui/bootanimation/bootanimation.mk)
-$(call inherit-product, vendor/weebui/charger/charger.mk)
-
-
+PRODUCT_COPY_FILES += \
+    vendor/weebui/charger/images/charger/battery_fail.png:$(TARGET_COPY_OUT_PRODUCT)/etc/res/images/charger/battery_fail.png \
+    vendor/weebui/charger/images/charger/battery_scale.png:$(TARGET_COPY_OUT_PRODUCT)/etc/res/images/charger/battery_scale.png \
+    vendor/weebui/charger/images/charger/main_font.png:$(TARGET_COPY_OUT_PRODUCT)/etc/res/images/charger/main_font.png \
+    vendor/weebui/charger/values/charger/animation.txt:$(TARGET_COPY_OUT_PRODUCT)/etc/res/values/charger/animation.txt \
