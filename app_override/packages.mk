@@ -12,13 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := vendor/weebui
-
-# Inherit vendor submodules
-$(call inherit-product, vendor/weebui/audio/audio.mk)
-$(call inherit-product, vendor/weebui/bootanimation/bootanimation.mk)
-$(call inherit-product, vendor/weebui/charger/charger.mk)
-$(call inherit-product, vendor/weebui/fonts/fonts.mk)
-$(call inherit-product, vendor/weebui/app_override/packages.mk)
-
-
+# Applications
+PRODUCT_PACKAGES += \
+       WeebLauncher \
+       WeebSystemUI
