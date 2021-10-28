@@ -10,7 +10,9 @@ import android.os.PowerManager;
 
 import androidx.annotation.Nullable;
 
+import com.weeb.android.systemui.qs.tileimpl.QSFactoryImplWeeb;
 import com.weeb.android.systemui.theme.ThemeOverlayControllerWeeb;
+
 
 import com.android.keyguard.KeyguardViewController;
 import com.android.systemui.broadcast.BroadcastDispatcher;
@@ -127,7 +129,7 @@ public abstract class SystemUIWeebModule {
 
     @Binds
     @SysUISingleton
-    public abstract QSFactory bindQSFactory(QSFactoryImpl qsFactoryImpl);
+    public abstract QSFactory bindQSFactory(QSFactoryImplWeeb qsFactoryImpl);
 
     @Binds
     abstract DockManager bindDockManager(DockManagerImpl dockManager);
