@@ -39,6 +39,7 @@ import com.android.systemui.util.leak.GarbageMonitor;
 // Custom tiles
 import com.weeb.android.systemui.qs.tiles.PowerShareTile;
 import com.weeb.android.systemui.qs.tiles.CaffeineTile;
+import com.weeb.android.systemui.qs.tiles.AmbientDisplayTile;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -49,6 +50,7 @@ public class QSFactoryImplWeeb extends QSFactoryImpl {
 
     private final Provider<PowerShareTile> mPowerShareTileProvider;
     private final Provider<CaffeineTile> mCaffeineTileProvider;
+    private final Provider<AmbientDisplayTile> mAmbientDisplayTileProvider;
 
     @Inject
     public QSFactoryImplWeeb(
@@ -82,7 +84,8 @@ public class QSFactoryImplWeeb extends QSFactoryImpl {
             Provider<AlarmTile> alarmTileProvider,
             Provider<QuickAccessWalletTile> quickAccessWalletTileProvider,
             Provider<PowerShareTile> powerShareTileProvider,
-            Provider<CaffeineTile> caffeineTileProvider) {
+            Provider<CaffeineTile> caffeineTileProvider,
+            Provider<AmbientDisplayTile> ambientDisplayTileProvider) {
         super(qsHostLazy, customTileBuilderProvider, wifiTileProvider, internetTileProvider, bluetoothTileProvider, cellularTileProvider, dndTileProvider, colorInversionTileProvider,
             airplaneModeTileProvider, workModeTileProvider, rotationLockTileProvider, flashlightTileProvider, locationTileProvider, castTileProvider, hotspotTileProvider, userTileProvider,
             batterySaverTileProvider, dataSaverTileProvider, nightDisplayTileProvider, nfcTileProvider, memoryTileProvider, uiModeNightTileProvider, screenRecordTileProvider, reduceBrightColorsTileProvider,
@@ -90,6 +93,7 @@ public class QSFactoryImplWeeb extends QSFactoryImpl {
         // custom tile
         mPowerShareTileProvider = powerShareTileProvider;
         mCaffeineTileProvider = caffeineTileProvider;
+        mAmbientDisplayTileProvider = ambientDisplayTileProvider;
     }
 
     private QSTileImpl createTileWeeb(String tileSpec) {
@@ -98,6 +102,8 @@ public class QSFactoryImplWeeb extends QSFactoryImpl {
                 return mPowerShareTileProvider.get();
             case "caffeine":
                 return mCaffeineTileProvider.get();
+            case "ambient_display":
+                return mAmbientDisplayTileProvider.get();
             default:
                 return null;
         }
