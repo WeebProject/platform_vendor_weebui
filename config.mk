@@ -19,6 +19,5 @@ $(call inherit-product, vendor/weebui/audio/audio.mk)
 $(call inherit-product, vendor/weebui/bootanimation/bootanimation.mk)
 $(call inherit-product, vendor/weebui/charger/charger.mk)
 $(call inherit-product, vendor/weebui/fonts/fonts.mk)
-$(call inherit-product, vendor/weebui/app_override/packages.mk)
 
 
